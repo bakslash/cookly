@@ -1,0 +1,23 @@
+
+.anagram {
+    text-align: center;
+    background-color:transparent;
+    display: flex;
+    
+  }
+  button{
+      background-color:skyblue;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      padding: 10px;
+      color: aliceblue;
+  }
+  input{
+      background-color: black;
+      color: whitesmoke;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: none;
+      border-radius: 5px;
+  }
