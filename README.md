@@ -1,4 +1,4 @@
-# cookly
+# cookly Anagram checker
 
 # Clone down the repository
 
