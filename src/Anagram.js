@@ -6,36 +6,30 @@ class Anagram extends React.Component {
 	  super(props);
 	  this.state = {word1:'', word2:''}
 	
-	this.handleWord1Change =this.handleWord1Change.bind(this);
-	this.handleWord2Change =this.handleWord2Change.bind(this);
+	this.handleWordChange =this.handleWordChange.bind(this);
 	this.onSubmit =this.onSubmit.bind(this);
 
 	}
-	handleWord1Change (event) {
-		this.setState({word1:event.target.value})
+	
+	handleWordChange (e) {
+		this.setState({
+			[e.target.id]:e.target.value})
 		
 	}
-	handleWord2Change (event) {
-		this.setState({word2:event.target.value})
-		
-	}
-	onSubmit (event) {
-		event.preventDefault();
-                    
-		const check1 = `${this.state.word1}.split('')`
-		//.sort().join('')`;
-		const check2 = `${this.state.word2}.split('').sort().join('')`;
-         
-			if (check1===check2)
-			//{return alert("this word is not an anagram")}
-			{console.log(check1)}
+	onSubmit (e) {
+		e.preventDefault();
+		                
+		const check1=  `${this.state.word1}`;
+		const check2= `${this.state.word2}`;
+	
+			if (check1.split('').sort().join('')===check2.split('').sort().join(''))
+			{return alert("this word is an anagram")}
 
-			//else if(check1!==check2)
-			//{return alert("this word is an anagram")}
-		
-				
+			else {
+				return alert("this word is  not an anagram")
+			}
 			
-		   
+			
 	}
 
 	render() {
@@ -45,12 +39,14 @@ class Anagram extends React.Component {
 					<input type="text" 
 					placeholder="word 1" 
 					value ={this.state.word1} 
-					onChange={this.handleWord1Change} />
+					id = "word1"
+					onChange={this.handleWordChange} />
 					<br />
 					<input type="text" 
-					placeholder="word 1" 
+					placeholder="word 1"
+					id = "word2" 
 					value ={this.state.word2} 
-					onChange={this.handleWord2Change}/>
+					onChange={this.handleWordChange}/>
 					<br />
 
 					<button>Check Anagram</button>
