@@ -1,5 +1,9 @@
 # cookly
-#Clone down the repository
-#npm install
-#npm start
-#localhost:3000
+
+# Clone down the repository
+
+# npm install
+
+# npm start
+
+# visit localhost:3000
